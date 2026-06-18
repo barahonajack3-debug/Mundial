@@ -38,4 +38,6 @@ public abstract class Jugador extends Persona {
            "\nPosicion: "+ posicion + 
            "\nNumero de Dorsal: "+ numero;
     }
+    
+    
 }
