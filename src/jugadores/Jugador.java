@@ -25,11 +25,16 @@ public abstract class Jugador extends Persona {
         this.posicion = posicion;
     }
 
-    @Override
+    public Jugador(int numero, String posicion, String Nombre, LocalDate FechaNacimiento, String Nacionalidad) {
+        super(Nombre, FechaNacimiento, Nacionalidad);
+        this.numero = numero;
+        this.posicion = posicion;
+    }
+
     public String toString(String Nombre,LocalDate FechaNacimiento, String Nacionalidad ) {
-    return "Nombre: " + this.Nombre + 
-           "\nFechaNacimiento: " + this.FechaNacimiento + 
-           "\nNacionalidad: " + this.Nacionalidad + 
+    return "Nombre: " + getNombre() + 
+           "\nFechaNacimiento: " + this.getFechaNacimiento() + 
+           "\nNacionalidad: " + this.getNacionalidad() + 
            "\nPosicion: "+ posicion + 
            "\nNumero de Dorsal: "+ numero;
     }
