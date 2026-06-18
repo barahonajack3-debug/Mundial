@@ -11,13 +11,13 @@ import java.time.LocalTime;
  */
 public class Partido {
     //Atributos..
-    private String SeleccionPartido;
-    private String SeleccionVisitante;
+    private String SeleccionPartido; //cambiar a clase seleccion 
+    private String SeleccionVisitante; //cambiar a clase sellecion
     private String Estadio;
     private LocalDate Fecha;
     private LocalTime Hora;
-    private String Arbrito;
-    private String Resultado;
+    private String Arbrito;//Cambiar clase a arbitro arbitros []
+    private String Resultado;//agregar clase resultado = new resultado 
     
     //Metodos get...
     public String getSeleccionPartido() {
