@@ -31,9 +31,9 @@ public abstract class Jugador extends Persona {
 
     
     public String toString(String Nombre,LocalDate FechaNacimiento, String Nacionalidad ) {
-    return "Nombre: " + this.Nombre + 
-           "\nFechaNacimiento: " + this.FechaNacimiento + 
-           "\nNacionalidad: " + this.Nacionalidad + 
+    return "Nombre: " + this.getNombre() + 
+           "\nFechaNacimiento: " + this.getFechaNacimiento() + 
+           "\nNacionalidad: " + this.getNacionalidad() + 
            "\nPosicion: "+ posicion + 
            "\nNumero de Dorsal: "+ numero;
     }
