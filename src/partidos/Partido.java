@@ -17,7 +17,7 @@ public class Partido {
     private LocalDate Fecha;
     private LocalTime Hora;
     private String Arbrito;//Cambiar clase a arbitro arbitros []
-    private String Resultado;//agregar clase resultado = new resultado 
+    private String Resultados;//agregar clase resultado = new resultado 
     
     //Metodos get...
     public String getSeleccionPartido() {
@@ -39,7 +39,7 @@ public class Partido {
         return Arbrito;
     }
     public String getResultado() {
-        return Resultado;
+        return Resultados;
     }
     
     //Metodos set...
@@ -56,7 +56,7 @@ public class Partido {
         this.Arbrito = Arbrito;
     }
     public void setResultado(String Resultado) {
-        this.Resultado = Resultado;
+        this.Resultados = Resultado;
     }
     
     //Metodos constructor...
@@ -73,6 +73,6 @@ public class Partido {
     public String toString() {
         return "SeleccionPartido:" + SeleccionPartido + "\nSeleccionVisitante:" + SeleccionVisitante 
                 + "\nEstadio:" + Estadio + "\nFecha:" + Fecha + "\nHora:" + Hora 
-                + "\nArbrito:" + Arbrito + "\nResultado:" + (Resultado==null?"No jugado":Resultado);
+                + "\nArbrito:" + Arbrito + "\nResultado:" + (Resultados==null?"No jugado":Resultados);
     }
 }
