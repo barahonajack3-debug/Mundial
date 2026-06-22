@@ -5,25 +5,26 @@
 package partidos;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import selecciones.Seleccion;
 /**
  *
  * @author USER
  */
 public class Partido {
     //Atributos..
-    private String SeleccionPartido; //cambiar a clase seleccion 
-    private String SeleccionVisitante; //cambiar a clase sellecion
+    private Seleccion SeleccionPartido; //cambiar a clase seleccion 
+    private Seleccion SeleccionVisitante; //cambiar a clase sellecion
     private String Estadio;
     private LocalDate Fecha;
     private LocalTime Hora;
-    private String Arbrito;//Cambiar clase a arbitro arbitros []
+    private String Arbitro;//Cambiar clase a arbitro arbitros []
     private String Resultados;//agregar clase resultado = new resultado 
     
     //Metodos get...
-    public String getSeleccionPartido() {
+    public Seleccion getSeleccionPartido() {
         return SeleccionPartido;
     }
-    public String getSeleccionVisitante() {
+    public Seleccion getSeleccionVisitante() {
         return SeleccionVisitante;
     }
     public String getEstadio() {
@@ -36,7 +37,7 @@ public class Partido {
         return Hora;
     }
     public String getArbrito() {
-        return Arbrito;
+        return Arbitro;
     }
     public String getResultado() {
         return Resultados;
@@ -53,26 +54,26 @@ public class Partido {
         this.Hora = Hora;
     }
     public void setArbrito(String Arbrito) {
-        this.Arbrito = Arbrito;
+        this.Arbitro = Arbitro;
     }
     public void setResultado(String Resultado) {
         this.Resultados = Resultado;
     }
     
     //Metodos constructor...
-    public Partido(String SeleccionPartido, String SeleccionVisitante, String Estadio, LocalDate Fecha, LocalTime Hora, String Arbrito) {
+    public Partido(Seleccion SeleccionPartido, Seleccion SeleccionVisitante, String Estadio, LocalDate Fecha, LocalTime Hora, String Arbitro) {
         this.SeleccionPartido = SeleccionPartido;
         this.SeleccionVisitante = SeleccionVisitante;
         this.Estadio = Estadio;
         this.Fecha = Fecha;
         this.Hora = Hora;
-        this.Arbrito = Arbrito;
+        this.Arbitro = Arbitro;
     }
     
     //Metodo ToString...
     public String toString() {
         return "SeleccionPartido:" + SeleccionPartido + "\nSeleccionVisitante:" + SeleccionVisitante 
                 + "\nEstadio:" + Estadio + "\nFecha:" + Fecha + "\nHora:" + Hora 
-                + "\nArbrito:" + Arbrito + "\nResultado:" + (Resultados==null?"No jugado":Resultados);
+                + "\nArbrito:" + Arbitro + "\nResultado:" + (Resultados==null?"No jugado":Resultados);
     }
 }
