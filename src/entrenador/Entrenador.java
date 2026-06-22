@@ -26,10 +26,12 @@ public class Entrenador extends Persona{
         this.añosExperiencia = añosExperiencia;
     }
     public Entrenador (String Nombre, LocalDate FechaNacimiento, String Nacionalidad,int añosExperiencia){
-        this.Nombre=Nombre;
-        this.FechaNacimiento=FechaNacimiento;
-        this.Nacionalidad=Nacionalidad;
+        super(Nombre, FechaNacimiento,Nacionalidad);
         this.añosExperiencia=añosExperiencia;
     }
     
+    public String toString (){
+     return   "Nombre"+this.Nombre +"\nFecha Nacimiento"+this.getFechaNacimiento()+"\nNacionalidad"+this.Nacionalidad+
+                "\nAños Experiencia"+this.añosExperiencia;
+    }
 }

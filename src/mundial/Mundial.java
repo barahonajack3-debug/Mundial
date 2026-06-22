@@ -44,6 +44,9 @@ public String toString(){
     return "nombre"+ this.nombre +"\nAño"+ this.año+ "\nPais"+ this.Pais+ "\nSelecciones"+ this.Selecciones+ "\nPartidos"+ Partidos;
 }
 
+
+
+
 }
 
 
