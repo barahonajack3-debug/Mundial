@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package partidos;
+import abitros.Aribitro;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import resultado.Resultados;
 import selecciones.Seleccion;
 /**
  *
@@ -17,8 +19,9 @@ public class Partido {
     private String Estadio;
     private LocalDate Fecha;
     private LocalTime Hora;
-    private String Arbitro;//Cambiar clase a arbitro arbitros []
-    private String Resultados;//agregar clase resultado = new resultado 
+    private int CantidaArbitros;
+    private Aribitro[] Arbitros;//Cambiar clase a arbitro arbitros []
+    private Resultados Resultado;//agregar clase resultado = new resultado 
     
     //Metodos get...
     public Seleccion getSeleccionPartido() {
@@ -36,11 +39,11 @@ public class Partido {
     public LocalTime getHora() {
         return Hora;
     }
-    public String getArbrito() {
-        return Arbitro;
+    public Aribitro[] getArbrito() {
+        return Arbitros;
     }
-    public String getResultado() {
-        return Resultados;
+    public Resultados getResultado() {
+        return Resultado;
     }
     
     //Metodos set...
@@ -53,27 +56,81 @@ public class Partido {
     public void setHora(LocalTime Hora) {
         this.Hora = Hora;
     }
-    public void setArbrito(String Arbrito) {
-        this.Arbitro = Arbitro;
-    }
-    public void setResultado(String Resultado) {
-        this.Resultados = Resultado;
+    public void setResultado(Resultados Resultado) {
+        this.Resultado = Resultado;
     }
     
     //Metodos constructor...
-    public Partido(Seleccion SeleccionPartido, Seleccion SeleccionVisitante, String Estadio, LocalDate Fecha, LocalTime Hora, String Arbitro) {
+    public Partido(Seleccion SeleccionPartido, Seleccion SeleccionVisitante, String Estadio, 
+            LocalDate Fecha, LocalTime Hora, Aribitro[] Arbitro,Resultados Resultado,int CabtidadAtributos) {
         this.SeleccionPartido = SeleccionPartido;
         this.SeleccionVisitante = SeleccionVisitante;
         this.Estadio = Estadio;
         this.Fecha = Fecha;
         this.Hora = Hora;
-        this.Arbitro = Arbitro;
+        this.Arbitros = new Aribitro[10];
+        this.Resultado = Resultado;
+        this.CantidaArbitros= 0;
     }
     
+    //Funcion para agregar arbitros...
+    public boolean agregarArbitro(Aribitro Arbitro){
+        if (Arbitro==null){
+            return false;
+        }
+        if(buscarArbitro(Arbitro.getNombre())!=null){
+            return false;   
+        }if(CantidaArbitros>=Arbitros.length){
+            return false;
+        }
+        Arbitros[CantidaArbitros]=Arbitro;
+            CantidaArbitros++;
+        return true;  
+    }
+        
+        //Funcion para eliminar un arbitro...
+        public boolean eliminarArbitro(String nombre) {
+        int posicion = -1;
+        for (int i = 0; i < CantidaArbitros; i++) {
+            if (Arbitros[i].getNombre().equalsIgnoreCase(nombre)) {
+                posicion = i;
+                break;
+            }
+        }
+        if (posicion == -1) {
+            return false;
+        }
+        for (int i = posicion; i < CantidaArbitros - 1; i++) {
+            Arbitros[i] = Arbitros[i + 1];
+        }
+        Arbitros[CantidaArbitros - 1] = null;
+        CantidaArbitros--;
+        return true;
+    }
+
+    //Funcion para buscar un arbitro por nombre
+    public Aribitro buscarArbitro(String nombre) {
+        for (int i = 0; i < CantidaArbitros; i++) {
+            if (Arbitros[i].getNombre().equalsIgnoreCase(nombre)) {
+                return Arbitros[i];
+            }
+        }
+        return null;
+    }
+
+    //Funcion para contar la cantidad de arbitros asignados
+    public int contarArbitros() {
+        return CantidaArbitros;
+    }
+    //Funcion para verificar si un arbitro ya se encuentra registrado en el partido
+    public boolean existeArbitro(String nombre) {
+        return buscarArbitro(nombre) != null;
+    }
+
     //Metodo ToString...
     public String toString() {
         return "SeleccionPartido:" + SeleccionPartido + "\nSeleccionVisitante:" + SeleccionVisitante 
                 + "\nEstadio:" + Estadio + "\nFecha:" + Fecha + "\nHora:" + Hora 
-                + "\nArbrito:" + Arbitro + "\nResultado:" + (Resultados==null?"No jugado":Resultados);
+                + "\nArbrito:" + Arbitros + "\nResultado:" + (Resultado==null?"No jugado":Resultado);
     }
 }

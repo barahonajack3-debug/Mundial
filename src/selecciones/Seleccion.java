@@ -12,7 +12,7 @@ import jugadores.Jugador;
 public class Seleccion  {
 
     private String nombre;
-    private String grupo;
+    private grupo grupo;
     private String entrenador;
     private Jugador[] jugadores;
     private int cantidadJ;
@@ -21,11 +21,11 @@ public class Seleccion  {
         return nombre;
     }
 
-    public String getGrupo() {
+    public grupo getGrupo() {
         return grupo;
     }
 
-    public void setGrupo(String grupo) {
+    public void setGrupo(grupo grupo) {
         this.grupo = grupo;
     }
 
@@ -41,7 +41,7 @@ public class Seleccion  {
         return jugadores;
     }
     
-     public Seleccion(String nombre, String grupo) {
+     public Seleccion(String nombre, grupo grupo) {
        this.nombre = nombre;
         this.grupo = grupo;
         this.jugadores = new Jugador[23];
@@ -52,9 +52,11 @@ public class Seleccion  {
     if (cantidadJ >= jugadores.length) {
             System.out.println("La selección ya tiene 23 jugadores.");
             return;}
+    
     if (existeCamisa(jugador.getNumero())) {
             System.out.println("Ya existe un jugador con la camiseta #" + jugador.getNumero());
             return;} 
+    
      jugadores[cantidadJ] = jugador;
         cantidadJ++;
         System.out.println(jugador.getNombre() + " agregado correctamente.");
