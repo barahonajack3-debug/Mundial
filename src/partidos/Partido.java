@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package partidos;
+import abitros.Aribitro;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import selecciones.Seleccion;
@@ -17,7 +18,7 @@ public class Partido {
     private String Estadio;
     private LocalDate Fecha;
     private LocalTime Hora;
-    private String Arbitro;//Cambiar clase a arbitro arbitros []
+    private Aribitro Arbitro;//Cambiar clase a arbitro arbitros []
     private String Resultados;//agregar clase resultado = new resultado 
     
     //Metodos get...
@@ -36,7 +37,7 @@ public class Partido {
     public LocalTime getHora() {
         return Hora;
     }
-    public String getArbrito() {
+    public Aribitro getArbrito() {
         return Arbitro;
     }
     public String getResultado() {
@@ -53,7 +54,7 @@ public class Partido {
     public void setHora(LocalTime Hora) {
         this.Hora = Hora;
     }
-    public void setArbrito(String Arbrito) {
+    public void setArbrito(Aribitro Arbrito) {
         this.Arbitro = Arbitro;
     }
     public void setResultado(String Resultado) {
@@ -61,7 +62,7 @@ public class Partido {
     }
     
     //Metodos constructor...
-    public Partido(Seleccion SeleccionPartido, Seleccion SeleccionVisitante, String Estadio, LocalDate Fecha, LocalTime Hora, String Arbitro) {
+    public Partido(Seleccion SeleccionPartido, Seleccion SeleccionVisitante, String Estadio, LocalDate Fecha, LocalTime Hora, Aribitro Arbitro) {
         this.SeleccionPartido = SeleccionPartido;
         this.SeleccionVisitante = SeleccionVisitante;
         this.Estadio = Estadio;
