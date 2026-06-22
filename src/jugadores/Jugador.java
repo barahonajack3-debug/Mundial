@@ -12,6 +12,10 @@ import personas.Persona;
 public abstract class Jugador extends Persona {
     private int numero;
     private String posicion;
+
+    public Jugador(String Nombre, LocalDate FechaNacimiento, String Nacionalidad) {
+        super(Nombre, FechaNacimiento, Nacionalidad);
+    }
     
     public int getNumero() {
         return numero;
@@ -25,7 +29,7 @@ public abstract class Jugador extends Persona {
         this.posicion = posicion;
     }
 
-    @Override
+    
     public String toString(String Nombre,LocalDate FechaNacimiento, String Nacionalidad ) {
     return "Nombre: " + this.Nombre + 
            "\nFechaNacimiento: " + this.FechaNacimiento + 

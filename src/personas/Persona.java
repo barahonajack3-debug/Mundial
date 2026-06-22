@@ -13,9 +13,9 @@ import java.time.Period;
  */
 public class Persona {
     //Atributos
-    private String Nombre;
-    private LocalDate FechaNacimiento;
-    private String Nacionalidad;
+    public String Nombre;
+    public LocalDate FechaNacimiento;
+    public String Nacionalidad;
     //Metodos get 
     public String getNombre() {
         return Nombre;
